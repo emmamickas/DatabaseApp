@@ -1,0 +1,156 @@
+﻿<Window x:Class="Milestone1_Dellwo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Milestone1_Dellwo"
+        mc:Ignorable="d"
+        Title="TeamTeam Yelp App" Height="600" Width="1047">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TabControl Margin="0" Background="#FFE4E3E3">
+
+            <TabItem Header="User Information">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="79*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="430*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="latest_tip_grid" HorizontalAlignment="Left" Height="417" Margin="306.12,73,0,0" FontSize="14" VerticalAlignment="Top" Width="531" Grid.Column="2" />
+                    <DataGrid x:Name="friends_grid" HorizontalAlignment="Left" Height="132" Margin="36,372,0,0" FontSize="14" VerticalAlignment="Top" Width="400" HorizontalScrollBarVisibility="Visible" Grid.ColumnSpan="3" />
+                    <ListBox x:Name="cur_user_list_box" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="192" Margin="36,84,0,0" SelectionChanged="user_list_box_SelectionChanged" Grid.ColumnSpan="3" />
+                    <TextBox x:Name="cur_user_text_box" Margin="36,42,807.2,476.4" Text="Enter users name" TextChanged="user_text_TextChanged" Grid.ColumnSpan="3" />
+
+
+
+                    <Label Content="Name:" Width="100" Margin="59.12,60,701.2,457.4" Height="25" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Fans:" Margin="154.12,88,672.2,434.4" Height="20" Width="34" Padding="0" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Tip Count:" Margin="59.12,233,730.2,284.4" Padding="0" Height="25" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Yelping Since:" Margin="61.12,120,729.2,403.4" Width="70" Padding="0" Height="19" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Stars:" Width="100" Margin="54.12,84,706.2,433.4" Height="25" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Votes:" Margin="59.12,169,758.2,353.4" Height="20" Padding="0" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="funny:" Margin="109.12,169,708.2,353.4" Height="20" Padding="0" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="cool:" Margin="159.12,169,658.2,353.4" Height="20" Padding="0" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="useful:" Margin="209.12,163,610.2,340.4" Padding="0" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Total Tip Likes:" Margin="59.12,263,708.2,258.4" Padding="0" Height="21" FontWeight="Medium" Grid.Column="2"/>
+                    <TextBox x:Name="u_fans_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="188.12,84,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_name_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="118.12,56,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_stars_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="99.12,84,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_yelp_since_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="154.12,116,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_votes_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Margin="62.12,190,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_funny_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Margin="109.12,190,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_useful_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Margin="209.12,190,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_cool_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Margin="159.12,190,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_tip_count_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Margin="154.5,228,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_total_likes_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Margin="154.5,256,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <TextBox x:Name="u_lat_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Margin="109.5,286,0,0" IsEnabled="False" Grid.Column="2" />
+                    <TextBox x:Name="u_long_tbox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Margin="109.5,318,0,0" IsEnabled="False" Grid.Column="2"/>
+                    <Label Content="Latitude:" Margin="41.12,290,771.2,231.4" Padding="0" Height="21" FontWeight="Medium" Grid.Column="2"/>
+                    <Label Content="Longtitude:" Margin="40.12,323,758.2,198.4" Padding="0" Height="21" FontWeight="Medium" Grid.Column="2"/>
+                    <Button x:Name="edit_lat_long_btn" Content="edit" Margin="202.12,290,0,227.4" Padding="0" Height="25" HorizontalAlignment="Left" Width="40" Click="edit_lat_long_btn_Click" Grid.Column="2"/>
+                    <Button x:Name="update_lat_long_btn" Content="update" Margin="202.12,327,0,190.4" Padding="0" Height="25" HorizontalAlignment="Left" Click="update_lat_long_btn_Click" Grid.Column="2"/>
+                </Grid>
+
+
+            </TabItem>
+
+
+            <TabItem Header="Business Search">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="978*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="state_label" Content="State" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Margin="14,46,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <Label x:Name="city_label" Content="City" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Margin="14,80,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+
+                    <ComboBox x:Name="state_list" HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" FontSize="14" Margin="34,50,0,0" SelectionChanged="state_list_SelectionChanged" BorderBrush="#FFD0CECE" Grid.Column="2">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                <GradientStop Color="#FFF2F1F1" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <ComboBox x:Name="sort_list" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" FontSize="14" Margin="782,278,0,0" BorderBrush="#FFD0CECE" Grid.Column="2" SelectionChanged="sort_list_SelectionChanged" >
+
+                    </ComboBox>
+
+                    <DataGrid x:Name="business_grid" HorizontalAlignment="Left" Height="185" Margin="233,50,0,0" FontSize="14" VerticalAlignment="Top" Width="459" SelectionChanged="business_grid_SelectionChanged" Grid.Column="2"/>
+                    <Label x:Name="Zipcode_label" Content="Zipcode" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Margin="14,172,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <Label x:Name="Categories_label" Content="Categories" HorizontalAlignment="Left" FontSize ="14"  Margin="14,273,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <ListBox x:Name="City_list_box" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="234" Margin="14,108,0,0" SelectionChanged="City_list_box_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <ListBox x:Name="Zipcode_list_box" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="234" Margin="14,201,0,0" SelectionChanged="Zipcode_list_box_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <ListBox x:Name="Cat_list_box" HorizontalAlignment="Left" Height="163" VerticalAlignment="Top" Width="229" Margin="14,307,0,0" SelectionChanged="Cat_list_box_SelectionChanged" SelectionMode="Multiple" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <ListBox x:Name="cat_att_list_box" Margin="763,307,10,10" Grid.Column="2"/>
+                    <DataGrid x:Name="tip_grid" HorizontalAlignment="Left" Height="128" Margin="233,273,0,0" VerticalAlignment="Top" Width="459" Grid.Column="2"/>
+                    <TextBox x:Name="comment_text_box" Margin="34,498,824,10" Text="Enter Tip"
+                             KeyDown="comment_text_box_KeyDown" Grid.Column="2"/>
+                    <TextBox x:Name="business_name_tbox" Margin="233,415,357,0" VerticalAlignment="Top" Height="36" Text="Business Name" Background="#FF95BBAA" Grid.Column="2"/>
+
+
+
+
+
+                    <StackPanel Background="AliceBlue" Grid.Column="2" Margin="706.5,10,10,455.5">
+                        <CheckBox x:Name="price_1" Content="$" Click="price_range_Checked"  />
+                        <CheckBox x:Name="price_3" Content="$$$ " HorizontalAlignment="Center" Margin="0" Width="46" Click="price_range_Checked"  />
+                        <CheckBox x:Name="price_4" Content="$$$$" HorizontalAlignment="Center" Click="price_range_Checked" />
+                        <CheckBox x:Name="price_2" Content="$$" Click="price_range_Checked" />
+                    </StackPanel>
+
+                    <StackPanel x:Name="att_stack_panel"  Background="WhiteSmoke" Height="180" Margin="706,94,134,272" Grid.Column="2" >
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="Margin" Value="0,2,0,0"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
+                        <CheckBox x:Name="att_credit_c" Content="Accepts Credit Cards" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_bike" Content="Bike Parking" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_deliv" Content="Delivery" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_free_wifi" Content="Free Wi-Fi" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_groups" Content="Good for Groups" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_kids" Content="Good for Kids" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_outdoor" Content="Outdoor Seating" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_take_out" Content="Take Out" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_reservation" Content="Takes Reservations" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="att_wheelchair" Content="Wheelchair Accesible" Click="attribute_Clicked"/>
+
+                    </StackPanel>
+                    <StackPanel x:Name="meal_stack_panel"  Background="WhiteSmoke" Height="170" Width="100" Margin="865,104,13,272" Grid.Column="2"  >
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="Margin" Value="0,5,0,0"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
+                        <CheckBox x:Name="meal_breakfast" Content="Breakfast" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="meal_lunch" Content="Lunch" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="meal_brunch" Content="Brunch" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="meal_dinner" Content="Dinner" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="meal_dessert" Content="Dessert" Click="attribute_Clicked"/>
+                        <CheckBox x:Name="meal_late_night" Content="Late Night" Click="attribute_Clicked"/>
+
+                    </StackPanel>
+                    <TextBox x:Name="business_address_tbox" Margin="233,456,357,0" VerticalAlignment="Top" Height="36" Text="Address" Background="#FF95BBAA" Grid.Column="2"/>
+                    <TextBox x:Name="business_hours_tbox" Margin="233,498,357,0" VerticalAlignment="Top" Height="36" Text="Today: Opens / Closes" Background="#FF95BBAA" Grid.Column="2"/>
+                    <Label x:Name="Categories_label_Copy" Content="Sort By:" HorizontalAlignment="Left" FontSize ="14"  Margin="720,273,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Button x:Name="show_tips_btn" Content="Show tips" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Margin="644,436,0,0" Grid.Column="2" Click="show_tips_btn_Click"/>
+                    <Button x:Name="show_checkins_btn" Content="Show Checkins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Margin="644,472,0,0" Grid.Column="2" Click="show_checkins_btn_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+
+    </Grid>
+</Window>
